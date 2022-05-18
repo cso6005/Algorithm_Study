@@ -11,13 +11,13 @@ def solution(s):
     
     return result
 
-# 최상
+# 다른답풀이
 def solution(s):
 
     return s.lower().count('p') == s.lower().count('y')
 
 
-#Q6. //
+#Q6. // 다른답풀이
 def no_continuous(s):
     a = []
     for i in s:
@@ -48,13 +48,18 @@ def solution(s):
 
     return answer
 
-# 최상
+#  다른답풀이
 def string_middle(str):
     # 함수를 완성하세요
 
     return str[(len(str)-1)//2:len(str)//2+1]
 
+# Q8.
 
+# 풀기
+def solution(x, n):
+
+    return [x*i for i in range(1,n+1)]
     
 
 
