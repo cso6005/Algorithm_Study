@@ -1,3 +1,4 @@
+'''
 Q4)
 문자열 내 p와 y의 개수
 문제 설명
@@ -18,9 +19,9 @@ s	answer
 
 입출력 예 #2
 'p'의 개수 1개, 'y'의 개수 2개로 다르므로 false를 return 합니다.
-
-
 '''
+
+# 내가 풀 것
 def solution(s):
     result = True
     S = s.upper()
@@ -29,8 +30,8 @@ def solution(s):
         result = False 
     
     return result
-'''
 
+# 최상
 def solution(s):
 
     return s.lower().count('p') == s.lower().count('y')
