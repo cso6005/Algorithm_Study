@@ -60,6 +60,39 @@ def string_middle(str):
 def solution(x, n):
 
     return [x*i for i in range(1,n+1)]
+
+#Q9.
+# 풀기
+a, b = map(int, input().split(' '))
+for i in range(b):
+    print("*"*a)
+
+# 다른답풀이
+a, b = map(int, input().strip().split(' '))
+answer = ('*'*a +'\n')*b
+print(answer)
+
+#Q10.
+#풀기
+def solution(arr):
+    return sum(arr)/len(arr)
+ 
+# Q11.
+
+
+#Q12.
+
+#풀기
+def solution(num):
+
+    return "Even" if num%2==0 else "Odd"
+
+
+#Q13.
+#풀기
+
+def solution(n):
     
+    return sum([int(i) for i in str(n)])
 
 
