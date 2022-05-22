@@ -109,6 +109,11 @@ def solution(n, m):
 
 # [풀기]
 # 제곱근함수 math.sqrt 이용. sqrt값이 정수일 때 제곱근이라 판단
+# if문 한 줄에 넣기 
+"co1" if int_a > 3 else "co2")
+"co1" if int_a > 3 else "co2" if int_a == 2 else "co3")
+
+
 import math
 
 def solution(n):
