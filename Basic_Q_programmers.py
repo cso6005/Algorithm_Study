@@ -95,4 +95,40 @@ def solution(n):
     
     return sum([int(i) for i in str(n)])
 
+# Q14.
+# [풀기] 
+# 최대공약수 : 범위 뒤부터 (공약수 중 최대이니) 동시에 약수가 되는(나누었을 때 나머지가 0)
+# 최대공배수는 최대공약수로 구하기 : 최대공약수 * 최대공배수 = 두수의 곱
+# if 조건, 논리연산자 괄호 잘 묶어주기
+
+def solution(n, m):
+    for i in range(min(n,m), 0, -1):
+        if not (n % i or m % i):
+            return [i, (n*m)//i]
+# Q.15
+
+# [풀기]
+# 제곱근함수 math.sqrt 이용. sqrt값이 정수일 때 제곱근이라 판단
+import math
+
+def solution(n):
+    return  int(pow(math.sqrt(n)+1,2)) if int(math.sqrt(n))==math.sqrt(n) else -1
+
+
+#  다른 답 풀이
+# [참조] 정수임을 찾는 방법 : n % 1 ==0 이면 정수
+def nextSqure(n):
+    from math import sqrt
+    return -1 if sqrt(n) % 1 else (sqrt(n)+1)**2
+
+# [참조] 제곱근 -> n**(1/2) 
+def nextSqure(n):
+    sqrt = n ** (1/2)
+
+    if sqrt % 1 == 0:
+        return (sqrt + 1) ** 2
+    return -1
+
+
+
 
