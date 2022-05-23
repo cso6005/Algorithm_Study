@@ -137,5 +137,48 @@ def nextSqure(n):
     return -1
 
 
+# Q.16
+
+# [풀기]
+def solution(s):
+
+    answer = False
+    if (len(s) == 4) or (len(s) == 6):
+        try:
+            if int(s) != 0:
+                answer = True
+
+        except(ValueError):
+            pass
+
+    return answer
+
+
+# [다른답풀이_ 예외처리_ 내가 푼 것 더 간단하게]
+
+def alpha_string46(s):
+    try:
+        int(s)
+    except:
+        return False
+    return len(s) == 4 or len(s) == 6 
+
+
+# [다른답풀이_ 예외처리, isdigit 함수]
+# s.isdigit("판단할 문자열")   :   문자열이 숫자로만 이루어져있는지 확인하는 함수 boo1 반환
+# "판단할 문자열".isdigit()  # 하지만 실수나 음수를 판단하지 못함. '-' '.' 판단 못함.
+
+def alpha_string46(s):
+    return s.isdigit() and len(s) in (4, 6)
+
+
+# [다른답풀이_ 정규표현식]
+
+def alpha_string46(s):
+    import re
+    return bool(re.match("^(\d{4}|\d{6})$", s))
+
+
+
 
 
