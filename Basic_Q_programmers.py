@@ -178,7 +178,85 @@ def alpha_string46(s):
     import re
     return bool(re.match("^(\d{4}|\d{6})$", s))
 
+# Q 17.
+
+# [풀기]
+# 1) '구분자'.join(리스트) : 매개변수로 들어온 리스트에 있는 요소 하나하나를 합쳐서 하나의 문자열로 바꾸어 반환하는 하수
+# ''.join(리스트) 홀따옴표 안에 아무것도 안 넣으면 그냥 합쳐서 abc 반환
+# '-'.join(리스트) 'a-b-c'
+
+# 2) sort() 함수는 str형 사용 못함
+# 그래서 sorted() 를 사용. sorted(정렬할 데이터[, key 파라미터][,reverse 파라미터])
+# 매개변수로 들어온 이터러블한 데이터를 새로운 정렬된 리스트로 만들어서 반환해주는 함수.
+# 첫 번째 매개변수로 들어올 "정렬할 데이터"는 iterable 한 데이터 이어야 합니다.
+# 기본값 오름차순.    reverse=True 내림차순
+
+# 리스트.sort()와 sorted(리스트)의 가장 큰 차이는 
+#  리스트.sort() 는 본체의 리스트를 정렬해서 변환하는 것이고, str 형 안됨.
+#  sorted(리스트) 는 본체 리스트는 내버려두고, 정렬한 새로운 리스트를 반환하는 것입니다.
+
+def solution(n):
+
+    return int(''.join(sorted(str(n),reverse=True)))
 
 
+
+# [다른 풀이] _ 리스트로 변환해서 sort()함수사용. 
+def solution(n):
+    ls = list(str(n))
+    ls.sort(reverse = True)
+    return int("".join(ls))
+
+# Q 18.
+
+# [풀기]
+def solution(n):
+
+    return [int(i) for i in str(n)[::-1]]
+
+
+# [다른 풀이]_ map함수()
+def digit_reverse(n):
+    return list(map(int, reversed(str(n))))
+
+
+# Q.19.
+
+# [풀기]
+def solution(phone_number):
+    
+    return ("*"*(len(phone_number)-4)) + (phone_number[len(phone_number)-4:])
+
+# 길이를 모르는 문자열에서 뒤에서 4번째 문자를 조회하고 싶다고 할 때 
+# 굳이 len()함수써서 -4 해서 할 필요없다.! 그냥 s[-4] 하면 뒤에서부터 조회!
+
+# [다른 풀이]
+def hide_numbers(s):
+    return "*"*(len(s)-4) + s[-4:]
+
+#.20.
+
+# [나 풀기 1 ]
+def solution(array, commands):
+    lst=[]
+    for i in commands:
+        a = array[i[0]-1:i[1]]
+        a.sort()
+        lst.append(a[i[2]-1])
+    return lst
+
+# [나 풀기 2]
+def solution(array, commands):
+
+    return [ sorted(array[i[0]-1:i[1]])[i[2]-1] for i in commands ]
+
+solution([1, 5, 2, 6, 3, 7, 4],[[2, 5, 3], [4, 4, 1], [1, 7, 3]])
+
+
+# [다른 풀이]wow
+
+def solution(array, commands):
+
+    return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
 
 
