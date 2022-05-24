@@ -260,3 +260,20 @@ def solution(array, commands):
     return list(map(lambda x:sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
 
 
+# Q. 21.
+
+# [내가 푼 것]
+# 어차피 A == 0 이런 비교연산자의 반환값은 bool 이므로 return에 바로 넣어주면 됨! 
+# 굳이 if 문 안 쓰고!
+
+def solution(x):
+
+    if x % sum([int(i) for i in str(x)]) == 0:
+        return True 
+    else:    
+        return False
+
+# [다른 풀이]
+def Harshad(n):
+    # n은 하샤드 수 인가요?
+    return n % sum([int(c) for c in str(n)]) == 0
