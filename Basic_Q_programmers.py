@@ -277,3 +277,18 @@ def solution(x):
 def Harshad(n):
     # n은 하샤드 수 인가요?
     return n % sum([int(c) for c in str(n)]) == 0
+
+# Q. 22 
+[내가 푼 것]
+def solution(arr, divisor):
+
+    a = [i for i in sorted(arr) if i % divisor == 0 ]
+    if a != []:
+        return a
+    return [-1]
+
+# [다른 풀이]
+# 리스트 값이 있으면 True, 없으면 False !!!!
+# python은 or 앞이 참일경우 해당 값까지만 , 거짓일경우 뒤에 것까지 호출
+def solution(arr, divisor): return sorted([n for n in arr if n%divisor == 0]) or [-1]
+
