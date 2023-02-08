@@ -1,40 +1,16 @@
-from sys import stdin
-lst_1 = [i for i in range(int(stdin.readline().strip())+1, 3, -1)]
-# 0 ~ N-1
+# 하노이탑
+# https://study-all-night.tistory.com/6
+# https://shoark7.github.io/programming/algorithm/tower-of-hanoi
 
-# 초기에 이번 두번 옮김.
-lst_3 = [1] # 젤 위 꺼 먼저 빼주기
-lst_2 = [2] 
-print(lst_1)
-print(lst_2)
-print(lst_3)
-
-def func(n):
-    if len(lst_1) == 0:
-        return n 
+def hanoi_tower(n, start, end) :
+    if n == 1 :
+        print(start, end)
+        return
+       
+    hanoi_tower(n-1, start, 6-start-end) # 1단계
+    print(start, end) # 2단계
+    hanoi_tower(n-1, 6-start-end, end) # 3단계
     
-    else:
-        if 1:
-            print()
-
-        if len(lst_3) == 0:
-            lst_3.append(lst_1.pop(-1))
-
-        elif len(lst_2) == 0:
-            lst_2.append(lst_1.pop(-1))
-
-        else:
-            if lst_2[0] > lst_3[0]:
-                lst_2.append(lst_3[-1])
-            else:
-                lst_3.append(lst_2[-1])
-
-        if lst_3[0] > n :
-            lst_3.append(lst_1.pop(n))
-        elif lst_2[0] > n:
-            lst_2.append(lst_1.pop(n))
-        
-        n+=1
-
-func(3)
-
+n = int(input())
+print(2**n-1)
+hanoi_tower(n, 1, 3)

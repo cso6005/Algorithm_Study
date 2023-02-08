@@ -1,18 +1,20 @@
-from sys import stdin
-N = int(stdin.readline().strip())
-pattern = '''***
-* *
-***'''
+# 별찍기
 
-def func(n):
-    if n // 3 == 0:
-        return ''
-    else:
-        print("***" * (n//3))
-        print("* *" * (n//3))
-        print("***" * (n//3))
-        return func((n)//3)
+def draw_stars(n):
 
+    if n==1:
+        return ['*']
 
-print(func(N))
+    Stars=draw_stars(n//3) # Stars는 리턴값 L(이전 재귀함수의) 이된다.
+    L=[]
+    for star in Stars:
+        L.append(star*3)
+    for star in Stars:
+        L.append(star+' '*(n//3)+star)
+    for star in Stars:
+        L.append(star*3)
+    print(L)
+    return L
 
+N=int(input())
+print('\n'.join(draw_stars(N)))
