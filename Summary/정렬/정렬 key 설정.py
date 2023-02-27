@@ -39,3 +39,27 @@ d = sorted(a, key = lambda x : x[1])
 e = [(1, 3), (0, 3), (1, 4), (1, 5), (0, 1), (2, 4)]
 f = sorted(e, key = lambda x : (x[0], -x[1]))
 # f = [(0, 3), (0, 1), (1, 5), (1, 4), (1, 3), (2, 4)]
+
+
+#2 튜플에 숫자형과 문자형이 섞여있을 경우 숫자형에 int()를 씌워주면
+# bad operand type for unary -: 'str' 이슈를 해결할 수 있다
+a.sort(key = lambda x : (-int(x[1]), int(x[2]), -int(x[3]), x[0] ))
+
+
+#3 리스트에서 median 값 구하는 식
+data = [1,3,5]
+data[(len(data)-1) // 2] 
+
+#5 문자열, 배열, 튜플 등을 역순으로 출력(간결하게)
+s = 'abcde'
+print(s[::-1])  # 'edcba'
+print(s[3:0:-1])  # dcba, 0~3인덱스를 역순으로
+
+l = ['a', 'b', 'c', 'd', 'e']
+print(l[::-1])  # ['e', 'd', 'c', 'b', 'a']
+t = ('a', 'b', 'c', 'd', 'e')
+print(t[::-1])  # ('e', 'd', 'c', 'b', 'a')
+
+
+
+

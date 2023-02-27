@@ -6,3 +6,6 @@ print(f'{n:.2f}%')
 
 # 2 '{형식}'.format(대상)
 print('{:.2f}%'.format(n) )
+
+
+print('{:.2f}'.format(n))
