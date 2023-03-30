@@ -2,11 +2,20 @@ from sys import stdin
 
 N = int(stdin.readline().strip())
 k = int(stdin.readline().strip())
-cnt = N**2
-if k >  ((N**2)-1)//2:
-    for a in range(N, 0, -1):
-        for b in range(N, 0, -1):
-            cnt -=1
-            if cnt == k:
-                print(a*b)
+start = 1
+end = k
+result = 0
+while start <= end:
+    mid = (start + end)//2
+    cnt = 0
+    for i in range(1, N+1):
+        cnt += min(mid//i, N)
+    if cnt >= k:
+        end = mid-1
+        result = mid
+    else:
+        start = mid+1
+
+print(result)
+    
 
