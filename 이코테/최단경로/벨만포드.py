@@ -17,7 +17,7 @@ def bf(start):
         for j in range(m):
             cur, next, cost = edges[j][0], edges[j][1], edges[j][2]
 
-            # 모든 간선을 확인 하는데, 최단 거리 계산을 한 번이라고 한 cur 에 대해서 진행
+            # 모든 간선을 확인 하는데, 최단 거리 계산을 한 번이라도 한 cur 에 대해서 진행
             # 현재 간선을 거쳐 다른 노드로 이동하는 거리가 더짧은 경우
             if distance[cur] != INF and distance[cur] + cost < distance[next]:
                 distance[next] = distance[cur] + cost
