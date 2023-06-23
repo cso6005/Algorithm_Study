@@ -22,9 +22,10 @@ def dijkstra(start):
         # (최소힙)에따라 가장 최단 거리가 짧은 노드에 대한 정보가 꺼내짐
         dist, now = heapq.heappop(q)
 
-        # 큐에 든 값이 distance 테이블의 값보다 작은 것으로 이미 해당 노드는 최단거리가 처리된 노드이기에 해당 원소는 무시한다.
+        # 큐에 든 값보다 distance 테이블의 값이 작은 것으로 이미 해당 노드는 최단거리가 처리된 노드이기에 해당 원소는 무시한다.
         if dist > distance[now]:
             continue
+        
         for i in graph[now]:
             cost = dist + i[1]
             if cost < distance[i[0]]:

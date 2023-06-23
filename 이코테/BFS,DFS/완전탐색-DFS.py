@@ -11,7 +11,7 @@ def dfs(x, y):
         dfs(x+1, y)
         dfs(x, y-1)
         dfs(x, y+1)
-        return True # 0 안 나올 때까지 탐색 끝났으면 True 반환
+        return True # 0 안 나올 때까지 탐색 끝났으면(재귀 다 복귀하면) True 반환
     
     return False 
 

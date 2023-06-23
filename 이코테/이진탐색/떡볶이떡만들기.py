@@ -8,14 +8,14 @@ result = 0
 
 while start <= end:
     total = 0
-    min = (start+end)//2 # start~end 범위 내 중간값
+    mid = (start+end)//2 # start~end 범위 내 중간값
 
     for v in lst:
-        if v > min:
-            total += v - min
+        if v > mid:
+            total += v - mid
 
     if total < M:
-        end = min-1
+        end = mid-1
     else:
         result = min
         start = min+1
