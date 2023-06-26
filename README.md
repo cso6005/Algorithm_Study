@@ -16,7 +16,7 @@
 - 시간 복잡도, 공간 복잡도 (https://github.com/cso6005/Algorithm_Study/issues/2)
 - RecursionError 최대 재귀한도 깊이 에러 (https://github.com/cso6005/Algorithm_Study/issues/1)
 
-### :file_folder: 기타 팁 정리
+#### :file_folder: 기타 정리
 - 특정 문자 기준으로 문자열 파싱 해야 할 때 (Baekjoon 17413 단어뒤집기2) (https://github.com/cso6005/Algorithm_Study/issues/10)
 - 좌표 거리 계산 (https://github.com/cso6005/Algorithm_Study/issues/9)
 - 변수를 전역적으로 count 해서 체크 해야 할 때 (https://github.com/cso6005/Algorithm_Study/issues/13)
